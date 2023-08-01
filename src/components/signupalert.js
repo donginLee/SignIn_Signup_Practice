@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// 회원가입 버튼 클릭시에 나타나는 팝업창 컴포넌트
 function SignUpAlert({result,setResult}){
     const text=result===1?"회원가입되셨습니다.":"중복된 ID입니다.";
     const onConfirm=()=>{

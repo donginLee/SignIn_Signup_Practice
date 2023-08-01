@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
+// 로그인 버튼 클릭 시에 나타나는 팝업창 컴포넌트
 function SignInAlert({result,setResult}){
+    const navigate=useNavigate();
     const text=result===1?"로그인되셨습니다.":result===2?"존재하지 않는 ID입니다.":result===3?"비밀번호가 틀렸습니다.":"error" ;
     const onConfirm=()=>{
+        result===1?navigate('/home'):
         setResult(0);
+        
     };
     const Alert=styled.div`
     background-color: white;

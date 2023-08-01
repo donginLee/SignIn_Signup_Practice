@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
 import SignUpAlert from './signupalert';
+// 회원가입 UI 컴포넌트
 const SignUpTemplate=styled.div`
     display:flex;
     position:relative;

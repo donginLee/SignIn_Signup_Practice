@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import SignInAlert from './signinalert';
 import styled from 'styled-components';
 import {useNavigate} from 'react-router-dom';
+// 로그인 UI 컴포넌트
 const SignInTemplate=styled.div`
     display:flex;
     position:relative;
@@ -42,7 +43,7 @@ const SignInTemplate=styled.div`
 function SignIn({id,pw,onChangeID,onChangePW,onSignIn}){
     const [result,setResult]=useState(0); //result 0:팝업X 1:로그인 성공 2: 존재하지않는 ID 3: PW 틀림
     const none=()=>{}
-    const navigate=useNavigate();
+    //const navigate=useNavigate();
     const onChange=e=>{
         e.target.name==="signinid"?onChangeID(e.target.value)
         :e.target.name==="signinpw"?onChangePW(e.target.value)
@@ -52,7 +53,7 @@ function SignIn({id,pw,onChangeID,onChangePW,onSignIn}){
         console.log(id,pw);
         setResult(1);
         onSignIn();
-        navigate('/home');
+       
     };
     return(
         <>
